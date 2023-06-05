@@ -40,3 +40,8 @@ destination = "/etc/wireguard/"
 [plugins]
 ```
 
+## Special Thanks and References
+
+ - [Rust CLI Working Group](https://github.com/rust-cli).
+ - [Rust CLI Book](https://rust-cli.github.io/book/index.html).
+
