@@ -1,33 +1,15 @@
-use clap::{Command, Arg};
+use clap::Parser;
+
+#[derive(Parser)]
+#[command(author, version, about, long_about = None)] // Read from `Cargo.toml`
+struct Cli {
+    #[arg(short, long)]
+    install: Option<String>,
+}
 
 fn main() {
-    let matches = Command::new("doty")
-        .version("0.1.0")
-        .author("Fernando Cejas <android10@fernandocejas.com>")
-        .about("Doty is a .dotfiles Manager built with love in Rust")
-        .arg(
-            Arg::new("list-profiles")
-                .short('l')
-                .long("list-profiles")
-                .help("List profiles defines in 'doty.toml' file.")
-                .num_args(0)
-        )
-        .arg(
-            Arg::new("install-profile")
-                .short('i')
-                .long("install-profile")
-                .help("Install a <profile> define in 'doty.<profile>.toml' file.")
-                .num_args(1)
-                .value_name("profile")
-        )
-        .arg(
-            Arg::new("stats")
-                .short('s')
-                .long("stats")
-                .help("Display general CLI stats.")
-                .num_args(0)
-        )
-        .get_matches();
+    let _cli = Cli::parse();
 
-    println!("{:#?}", matches);
+    // println!("two: {:?}", cli.two);
+    // println!("one: {:?}", cli.one);
 }
