@@ -1,24 +1,44 @@
-use clap::Parser;
+use clap::{Parser, Subcommand};
 
 #[derive(Parser)]
-#[command(author, version, about, long_about = None)] // Read from `Cargo.toml`
+#[command(author, version, about, long_about = None)]
+#[command(propagate_version = true)]
 struct Cli {
-    #[arg(short = 'b', long = "bootstrap", help = "Initialize 'dotfiles' directory")]
-    bootstrap: bool,
+    #[command(subcommand)]
+    command: Commands,
+}
 
-    #[arg(short = 'l', long = "list-profiles", help = "List existing 'doty' profiles")]
-    list_profiles: bool,
 
-    #[arg(name= "PROFILE", short = 'i', long = "install-profile", help = "Install from 'doty.<PROFILE>.toml' file")]
-    install_profile: Option<String>,
+#[derive(Subcommand)]
+enum Commands {
+    /// Initialize 'dotfiles' directory
+    Bootstrap { },
 
-    #[arg(short = 's', long = "sanity-check", help = "Performs 'dotfiles' dir sanity check")]
-    sanity_check: bool,
+    /// List existing 'doty' profiles
+    ListProfiles { },
+
+    /// Install profile from 'doty.<PROFILE>.toml' file
+    InstallProfile { profile: String },
+
+    /// Performs 'dotfiles' dir sanity check
+    SanityCheck { },
 }
 
 fn main() {
-    let _cli = Cli::parse();
+    let cli = Cli::parse();
 
-    // println!("two: {:?}", cli.two);
-    // println!("one: {:?}", cli.one);
+    match &cli.command {
+        Commands::Bootstrap {  } => {
+            println!("doty: bootstrap!!!")
+        }
+        Commands::ListProfiles {  } => {
+            println!("doty: profiles!!!")
+        }
+        Commands::InstallProfile { profile } => {
+            println!("doty: install profile: {profile:?}")
+        }
+        Commands::SanityCheck {  } => {
+            println!("doty: sanity!!!")
+        }
+    }
 }
