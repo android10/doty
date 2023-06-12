@@ -11,16 +11,16 @@ struct Cli {
 
 #[derive(Subcommand)]
 enum Commands {
-    /// Initialize 'dotfiles' directory
+    /// Initialize 'dotfiles' directory.
     Bootstrap { },
 
-    /// List existing 'doty' profiles
+    /// List existing 'doty' profiles.
     ListProfiles { },
 
-    /// Install profile from 'doty.<PROFILE>.toml' file
+    /// Install profile from 'doty.<PROFILE>.toml' file.
     InstallProfile { profile: String },
 
-    /// Performs 'dotfiles' dir sanity check
+    /// Performs 'dotfiles' dir sanity check.
     SanityCheck { },
 }
 
