@@ -29,7 +29,7 @@ fn main() {
 
     match &cli.command {
         Commands::Bootstrap {  } => {
-            println!("doty: bootstrap!!!")
+            print!("doty: bootstrap!!!")
         }
         Commands::ListProfiles {  } => {
             println!("doty: profiles!!!")
