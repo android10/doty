@@ -1,8 +1,8 @@
+use assert_cmd::Command;
 use std::error::Error;
 
-use assert_cmd::Command;
 
-type TestResult = Result<(), Box<dyn Error>>;
+pub type TestResult = Result<(), Box<dyn Error>>;
 
 #[test]
 fn runs() -> TestResult {
