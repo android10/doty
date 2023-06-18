@@ -1,7 +1,6 @@
 use assert_cmd::Command;
 use std::error::Error;
 
-
 pub type TestResult = Result<(), Box<dyn Error>>;
 
 #[test]

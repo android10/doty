@@ -1,9 +1,9 @@
 [package]
 name = "doty"
 description = "doty is a .dotfiles Manager built with love in Rust"
+version = "0.1.0"
 authors = ["Fernando Cejas <android10@fernandocejas.com>"]
 edition = "2021"
-version = "0.1.0"
 
 [dependencies]
 clap = { version = "4.3.2", features = ["derive"] }
