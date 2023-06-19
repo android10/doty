@@ -1,4 +1,5 @@
-use crate::core::functional::Either;
+mod functional;
+use super::functional::Either;
 
 pub trait UseCase<T> {
     fn run(&self) -> Either<T> {
