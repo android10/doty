@@ -1,3 +1,8 @@
+mod features;
+mod core;
+
+use crate::{features::feature_bootstrap::FeatureBootstrap, core::feature::Feature};
+
 use clap::{Parser, Subcommand};
 
 #[derive(Parser)]
@@ -29,7 +34,8 @@ fn main() {
 
     match &cli.command {
         Commands::Bootstrap {  } => {
-            print!("doty: bootstrap!!!")
+            let feature_bootstrap = FeatureBootstrap { };
+            feature_bootstrap.run()
         }
         Commands::ListProfiles {  } => {
             println!("doty: profiles!!!")
