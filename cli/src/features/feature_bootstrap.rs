@@ -4,7 +4,11 @@ use crate::core::feature::Feature;
 pub struct FeatureBootstrap { }
 
 impl Feature for FeatureBootstrap {
+    
     fn run(&self) {
-        println!("dotfiles dir: {}", self.get_dotfiles_dir().unwrap());
+        match self.get_dotfiles_dir() {
+            Ok(dotfiles_dir) => println!("This is the DIR: {}", dotfiles_dir),
+            Err(_) => println!("INVALID dotfiles dir.")
+        }
     }
 }

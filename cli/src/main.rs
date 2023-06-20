@@ -34,17 +34,16 @@ fn main() {
 
     match &cli.command {
         Commands::Bootstrap {  } => {
-            let feature_bootstrap = FeatureBootstrap { };
-            feature_bootstrap.run()
+            FeatureBootstrap { }.run()
         }
         Commands::ListProfiles {  } => {
-            println!("doty: profiles!!!")
+            print!("doty: profiles!!!")
         }
         Commands::InstallProfile { profile } => {
-            println!("doty: install profile: {profile:?}")
+            print!("doty: install profile: {profile:?}")
         }
         Commands::SanityCheck {  } => {
-            println!("doty: sanity!!!")
+            print!("doty: sanity!!!")
         }
     }
 }

@@ -15,10 +15,10 @@ fn runs() -> TestResult {
 #[test]
 fn bootstrap_runs_correctly() -> TestResult {
     let mut cmd = Command::cargo_bin("doty")?;
-    cmd.arg("bootstrap")
+    cmd.arg("sanity-check")
         .assert()
         .success()
-        .stdout("doty: bootstrap!!!");
+        .stdout("doty: sanity!!!");
     Ok(())
 }
 
