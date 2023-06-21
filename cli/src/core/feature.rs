@@ -12,10 +12,10 @@ pub trait Feature {
     fn run(&self);
 
     /**
-     * Get and validate that the dotfiles directoy 
+     * Get and validate that the 'dotfiles' directoy 
      * exist in the user $HOME directory. 
      */
-    fn get_dotfiles_dir(&self) -> Result<String, DotyError> {
+    fn dotfiles_dir(&self) -> Result<String, DotyError> {
         let mut dotfiles_dir = env::var(USSER_HOME_ENV)
             .map_err(|_| DotyError::DotfilesInvalidDir{ })?;
 
