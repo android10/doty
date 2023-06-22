@@ -7,7 +7,7 @@ edition = "2021"
 
 [dependencies]
 clap = { version = "4.3.2", features = ["derive"] }
-text-colorizer = "1.0.0"
+ansi_term = "0.12.1"
 
 [dev-dependencies]
 assert_cmd = "2.0.11"
