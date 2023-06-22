@@ -1,3 +1,5 @@
+use std::collections::HashMap;
+
 use clap::{Parser, Subcommand};
 
 use crate::{
@@ -20,20 +22,18 @@ struct Cli {
  */
 #[derive(Subcommand)]
 enum Commands {
-    // --bootstrap
-    Bootstrap,
-
-    // --list-profiles
-    ListProfiles,
-
-    // --install-profile
-    InstallProfile { profile: String },
-
-    // --sanity-check
-    SanityCheck,
+    Bootstrap,                          // --bootstrap
+    ListProfiles,                       // --list-profiles
+    InstallProfile { profile: String }, // --install-profile
+    SanityCheck,                        // --sanity-check
 }
 
 pub fn run_command() {
+    let _map = HashMap::from([
+        ("one", FeatureBootstrap{}), 
+        ("two", FeatureBootstrap{})
+      ]);
+
     let cli = Cli::parse();
 
     match &cli.command {
@@ -63,4 +63,6 @@ fn print_and_color_stderr() {
 fn print_and_color_stdout() {
     todo!()
 }
+
+  
 
