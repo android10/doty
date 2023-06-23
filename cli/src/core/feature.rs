@@ -11,6 +11,8 @@ pub trait Feature {
 
     fn run(&self);
 
+    // fn help(&self);
+
     /**
      * Get and validate that the 'dotfiles' directoy 
      * exist in the user $HOME directory. 
