@@ -39,10 +39,14 @@ struct Cli {
  */
 #[derive(Subcommand)]
 enum Commands {
-    Bootstrap,                          // --bootstrap
-    ListProfiles,                       // --list-profiles
-    InstallProfile { profile: String }, // --install-profile
-    SanityCheck,                        // --sanity-check
+    /// This is Bootstrap help
+    Bootstrap,               
+    /// This is ListProfiles help
+    ListProfiles,                       
+    /// This is InstallProfile help
+    InstallProfile { profile: String }, 
+    /// This is SanityCheck help
+    SanityCheck,                        
 }
 
 mod ui {
