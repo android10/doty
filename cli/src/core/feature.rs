@@ -8,10 +8,8 @@ const USSER_HOME_ENV: &str = "HOME";
 const DOTFILES_DIR_NAME: &str = "dotfiles";
 
 pub trait Feature {
-
+    // fn run(&self) -> FeatureResult<String>;
     fn run(&self);
-
-    // fn help(&self);
 
     /**
      * Get and validate that the 'dotfiles' directoy 
@@ -30,3 +28,5 @@ pub trait Feature {
         Ok(dotfiles_dir)
     }
 }
+
+pub type FeatureResult<T> = Result<T, DotyError>; 

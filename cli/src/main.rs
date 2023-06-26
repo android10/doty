@@ -4,12 +4,12 @@ fn main() {
     let cli = Cli::parse();
 
     match &cli.command {
-        Commands::Bootstrap {  } => {
+        Commands::Bootstrap => {
             // Ok("doty: bootstrap!!!".to_string())
             println!("doty: bootstrap!!!");
             // FeatureBootstrap { }.run()
         }
-        Commands::ListProfiles {  } => {
+        Commands::ListProfiles => {
             // Ok("doty: profiles!!!".to_string())
             print!("doty: profiles!!!")
         }
@@ -17,7 +17,7 @@ fn main() {
             // Ok(format!("doty: install profile: {}", profile))
             print!("doty: install profile: {profile:?}")
         }
-        Commands::SanityCheck {  } => {
+        Commands::SanityCheck => {
             // Ok("doty: sanity!!!".to_string())
             print!("doty: sanity!!!")
         }
@@ -40,13 +40,13 @@ struct Cli {
 #[derive(Subcommand)]
 enum Commands {
     /// This is Bootstrap help
-    Bootstrap,               
+    Bootstrap,
     /// This is ListProfiles help
-    ListProfiles,                       
+    ListProfiles,
     /// This is InstallProfile help
-    InstallProfile { profile: String }, 
+    InstallProfile { profile: String },
     /// This is SanityCheck help
-    SanityCheck,                        
+    SanityCheck,
 }
 
 mod ui {
