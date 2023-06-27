@@ -1,29 +1,16 @@
 use clap::{Parser, Subcommand};
 
+use doty::domain::{run_bootstrap, run_list_profiles, run_install_profile, run_sanity_check};
+
 fn main() {
     let cli = Cli::parse();
 
     match &cli.command {
-        Commands::Bootstrap => {
-            // Ok("doty: bootstrap!!!".to_string())
-            println!("doty: bootstrap!!!");
-            // FeatureBootstrap { }.run()
-        }
-        Commands::ListProfiles => {
-            // Ok("doty: profiles!!!".to_string())
-            print!("doty: profiles!!!")
-        }
-        Commands::InstallProfile { profile } => {
-            // Ok(format!("doty: install profile: {}", profile))
-            print!("doty: install profile: {profile:?}")
-        }
-        Commands::SanityCheck => {
-            // Ok("doty: sanity!!!".to_string())
-            print!("doty: sanity!!!")
-        }
+        Commands::Bootstrap => { run_bootstrap() }
+        Commands::ListProfiles => { run_list_profiles() }
+        Commands::InstallProfile { profile } => { run_install_profile(profile) }
+        Commands::SanityCheck => { run_sanity_check() }
     }
-
-    doty::run_feature("bootstrap");
 }
 
 #[derive(Parser)]

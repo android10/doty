@@ -6,12 +6,9 @@ use crate::{
     // core::feature::Feature
 };
 
-use std::collections::HashMap;
-
-pub fn run_feature(_feature_name: &str) {
-    // TODO: Extract this
-    let _map = HashMap::from([
-        ("one", FeatureBootstrap{}), 
-        ("two", FeatureBootstrap{})
-      ]);
+pub mod domain {
+    pub fn run_bootstrap() { println!("doty: bootstrap!!!") }    
+    pub fn run_list_profiles() { print!("doty: profiles!!!") }    
+    pub fn run_install_profile(profile: &str) { print!("doty: install profile: {profile:?}") }    
+    pub fn run_sanity_check() { print!("doty: sanity!!!") }    
 }
