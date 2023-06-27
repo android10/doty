@@ -3,10 +3,13 @@ mod features;
 
 use crate::{
     features::feature_bootstrap::FeatureBootstrap, 
-    // core::feature::Feature
+    features::feature_profiles::FeatureListProfiles, 
 };
 
 pub mod domain {
+    pub use crate::core::error::DotyError::FeatureError;
+    pub use crate::core::feature::FeatureResult;
+
     pub fn run_bootstrap() { println!("doty: bootstrap!!!") }    
     pub fn run_list_profiles() { print!("doty: profiles!!!") }    
     pub fn run_install_profile(profile: &str) { print!("doty: install profile: {profile:?}") }    

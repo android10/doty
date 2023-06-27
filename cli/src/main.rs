@@ -1,6 +1,11 @@
 use clap::{Parser, Subcommand};
 
-use doty::domain::{run_bootstrap, run_list_profiles, run_install_profile, run_sanity_check};
+use doty::domain::{
+    run_bootstrap, 
+    run_list_profiles, 
+    run_install_profile, 
+    run_sanity_check
+};
 
 fn main() {
     let cli = Cli::parse();
@@ -22,17 +27,18 @@ struct Cli {
 }
 
 /**
- * Supported CLI commands
+ * Supported CLI commands and/or 
+ * Features/Functionalities.
  */
 #[derive(Subcommand)]
 enum Commands {
-    /// This is Bootstrap help
+    /// TODO: This is Bootstrap help
     Bootstrap,
-    /// This is ListProfiles help
+    /// TODO:  This is ListProfiles help
     ListProfiles,
-    /// This is InstallProfile help
+    /// TODO: This is InstallProfile help
     InstallProfile { profile: String },
-    /// This is SanityCheck help
+    /// TODO: This is SanityCheck help
     SanityCheck,
 }
 
