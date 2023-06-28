@@ -1,20 +1,28 @@
 use clap::{Parser, Subcommand};
 
 use doty::domain::{
-    run_bootstrap, 
-    run_list_profiles, 
-    run_install_profile, 
-    run_sanity_check
+    run_feature_bootstrap, 
+    run_feature_list_profiles, 
+    run_feature_install_profile, 
+    run_feature_sanity_check
 };
 
 fn main() {
     let cli = Cli::parse();
+    let mut result: Result<String, String> = Ok("()".to_string());
 
     match &cli.command {
-        Commands::Bootstrap => { run_bootstrap() }
-        Commands::ListProfiles => { run_list_profiles() }
-        Commands::InstallProfile { profile } => { run_install_profile(profile) }
-        Commands::SanityCheck => { run_sanity_check() }
+        Commands::Bootstrap => { 
+            result = run_feature_bootstrap()
+        }
+        Commands::ListProfiles => { run_feature_list_profiles() }
+        Commands::InstallProfile { profile } => { run_feature_install_profile(profile) }
+        Commands::SanityCheck => { run_feature_sanity_check() }
+    }
+
+    match result {
+        Ok(ok) => print!("ok result --> {}", ok),
+        Err(error) => print!("error result --> {}", error.to_string())
     }
 }
 

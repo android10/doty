@@ -17,13 +17,13 @@ pub trait Feature {
      */
     fn dotfiles_dir(&self) -> Result<String, DotyError> {
         let mut dotfiles_dir = env::var(USSER_HOME_ENV)
-            .map_err(|_| DotyError::DotfilesInvalidDir{ })?;
+            .map_err(|_| DotyError::DotfilesInvalidDir)?;
 
         dotfiles_dir.push_str(MAIN_SEPARATOR_STR);
         dotfiles_dir.push_str(DOTFILES_DIR_NAME);
 
         metadata(&dotfiles_dir)
-            .map_err(|_| DotyError::DotfilesInvalidDir{ })?;
+            .map_err(|_| DotyError::DotfilesInvalidDir)?;
 
         Ok(dotfiles_dir)
     }
