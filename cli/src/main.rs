@@ -9,20 +9,17 @@ use doty::domain::{
 
 fn main() {
     let cli = Cli::parse();
-    let mut result: Result<String, String> = Ok("()".to_string());
 
     match &cli.command {
         Commands::Bootstrap => { 
-            result = run_feature_bootstrap()
+            match run_feature_bootstrap() {
+                Ok(ok) => print!("ok result --> {}", ok),
+                Err(error) => print!("error result --> {}", error.to_string())
+            }
         }
         Commands::ListProfiles => { run_feature_list_profiles() }
         Commands::InstallProfile { profile } => { run_feature_install_profile(profile) }
         Commands::SanityCheck => { run_feature_sanity_check() }
-    }
-
-    match result {
-        Ok(ok) => print!("ok result --> {}", ok),
-        Err(error) => print!("error result --> {}", error.to_string())
     }
 }
 
