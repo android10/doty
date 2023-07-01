@@ -1,4 +1,5 @@
 use crate::core::feature::Feature;
+use crate::core::interactor::UseCase;
 // #[derive(Debug)]
 pub struct FeatureListProfiles { }
 
@@ -12,3 +13,10 @@ impl Feature for FeatureListProfiles {
     }
 }
 
+pub struct ListProfilesUseCase;
+
+impl UseCase<Vec<String>, (), String> for ListProfilesUseCase {
+    fn run(&self, _params: ()) -> Result<Vec<String>, String> {
+        todo!()
+    }
+}
