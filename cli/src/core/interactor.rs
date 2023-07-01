@@ -10,8 +10,16 @@ const DOTFILES_DIR_NAME: &str = "dotfiles";
 
 
 /// The main building block and execution unit.
+/// 
 /// It represents 'something' that could be executed. 
+/// 
 /// It basically follows the rules of a `Command Pattern`.
+/// 
+/// # Errors
+///
+/// If this function encounters any form of error, 
+/// this error is represented by the generic type `E`
+/// wrapped inside [`std::error::Error`].
 ///
 /// # Examples
 ///
@@ -25,9 +33,11 @@ const DOTFILES_DIR_NAME: &str = "dotfiles";
 /// }
 pub trait UseCase<T, Params, E> where E: Display {
 
+    /// bla bla bla 
+    ///  
+    /// # Arguments
     ///
-    /// 
-    /// 
+    /// * `params` - Type that holds the params for the UseCase execution.  
     fn run(&self, params: Params) -> Result<T, E>;
 
     /// Get and validate that the `dotfiles` directoy 
