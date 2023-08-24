@@ -1,7 +1,7 @@
 use clap::{Parser, Subcommand};
 
 use doty::domain::{
-    run_feature_bootstrap, 
+    run_feature_bootstrap,
     run_feature_list_profiles, 
     run_feature_install_profile, 
     run_feature_sanity_check
@@ -39,7 +39,7 @@ struct Cli {
 enum Commands {
     /// TODO: This is Bootstrap help
     Bootstrap,
-    /// TODO:  This is ListProfiles help
+    /// TODO: This is ListProfiles help
     ListProfiles,
     /// TODO: This is InstallProfile help
     InstallProfile { profile: String },

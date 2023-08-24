@@ -11,7 +11,8 @@ const DOTFILES_DIR_NAME: &str = "dotfiles";
 
 /// The main building block and execution unit.
 /// 
-/// It represents 'something' that could be executed. 
+/// It represents 'something' that could be executed,
+/// like an action or stuff that our app does. 
 /// 
 /// It basically follows the rules of a `Command Pattern`.
 /// 
@@ -26,11 +27,13 @@ const DOTFILES_DIR_NAME: &str = "dotfiles";
 /// ```
 /// pub struct MyUseCase;
 ///
+/// # #[cfg(doc)]
 /// impl UseCase<String, String, String> for MyUseCase {
 ///    fn run(&self, params: ()) -> Result<String, String> {
-///        // we do our fancy stuff here
+///       // we do our fancy stuff here
 ///    }
 /// }
+/// ```
 pub trait UseCase<T, Params, E> where E: Display {
 
     /// bla bla bla 
