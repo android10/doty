@@ -1,7 +1,7 @@
 mod common;
 
-use assert_cmd::Command;
 use common::TestResult;
+use assert_cmd::Command;
 
 #[test]
 fn runs() -> TestResult {
