@@ -1,0 +1,19 @@
+plugins=(archlinux
+	bundler 
+	jsontools
+    gradle	
+	vscode web-search 
+	tig 
+	gitfast 
+	colored-man-pages
+	colorize 
+	command-not-found 
+	cp
+    copypath
+	copyfile	
+	history
+	dirhistory 
+	sudo
+	zsh-interactive-cd
+	zsh-syntax-highlighting
+	zsh-autosuggestions)

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Doc:
+# https://wiki.archlinux.org/title/Android
+# https://developer.android.com/studio/run/emulator-commandline
+
+# Useful commands:
+# emulator -list-avds
+
+# Example:
+# QT_QPA_PLATFORM=xcb emulator -feature -Vulkan -avd Pixel_6_API_26
+
+QT_QPA_PLATFORM=xcb emulator -feature -Vulkan -avd $1

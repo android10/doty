@@ -1,0 +1,39 @@
+[profile]
+name = "Arch Linux"
+description = """
+Arch Linux running Hyprland.
+"""
+
+[commands]
+install_hyprland = """
+    yay -S hyprland swaybg swayidle swaylock wlroots wl-clipboard 
+"""
+install_themes_fonts_icons = """
+    yay -S ttf-jetbrains-mono-nerd adwaita-dark otf-droid-nerd
+"""
+install_shell = """
+    yay -S oh-my-zsh-git zsh-theme-powerlevel10k-git
+"""
+install_system_apps = """
+    yay -S systemd-boot-pacman-hook greetd xorg-xlsclients
+"""
+install_cli_apps = """
+    yay -S lsd gitui vim neovim fd graphicsmagick gzip trash-cli
+"""
+install_ui_apps = """
+    yay -S chromium firefox calibre gimp gnome-boxes 
+"""
+install_dev_tools = """
+    yay -S code intellij-idea-community-edition android-studio
+"""
+
+[devices]
+tuxedo_pulse15_gen2 = """
+    yay -S tuxedo-control-center tuxedo-keyboard-ite-dkms 
+"""
+lenovo_t495s = """
+    yay -S tlp tlp-rdw threshy threshy-gui
+"""
+other_laptops = """
+    yay -S tlp tlp-rdw waybar-hyprland
+"""

@@ -1,0 +1,6 @@
+[doty]
+version = 1
+
+[profiles]
+arch = "doty.arch.toml"
+fedora = "doty.fedora.toml"

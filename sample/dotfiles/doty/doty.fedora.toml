@@ -1,0 +1,25 @@
+[profile]
+name = "Fedora"
+description = """
+Fedora running Sway Windows Manager.
+"""
+
+[commands]
+install_shell = """
+"""
+install_system_apps = """
+"""
+install_cli_apps = """
+"""
+install_ui_apps = """
+"""
+install_dev_tools = """
+"""
+
+[devices]
+tuxedo_pulse15_gen2 = """
+"""
+lenovo_t495s = """
+"""
+other_laptops = """
+"""
