@@ -1,7 +1,7 @@
 //! # doty
 //!
-//! `doty` is a collection of utilities to 
-//! handle `dotfiles` inside the `$HOME` directory.
+//! `doty` is an optinionated collection of utilities 
+//! to handle `dotfiles` inside the `$HOME` directory.
 //! 
 //! TODO: Add `$HOME/dotfiles` directory structure 
 //! conventions.
